@@ -18,11 +18,7 @@ const CategoriesComponent = () => {
   };
 
   const getProductsByCategories = async (category) => {
-    const { data } = await axios.get(
-      `https://fakestoreapi.com/products/category/${category}`
-    );
-    setProductsByCategory(data);
-    history.push({ pathname: `/category/${category}`, state: data });
+    history.push({ pathname: `/category/${category}`, state: category });
   };
 
   useEffect(() => getCategories(), []);
