@@ -7,10 +7,13 @@ import CategoriesComponent from "../components/Categories/Categories";
 
 const AllNature = () => {
   const [products, setProducts] = useState([]);
+  const [loading,setLoading] = useState(false)
 
   const getProducts = async () => {
+    setLoading(true)
     const { data } = await axios.get(`https://fakestoreapi.com/products`);
-    setProducts(data);
+    setProducts(data)
+    setLoading(false)
   };
 
   useEffect(() => getProducts(), []);
@@ -21,9 +24,10 @@ const AllNature = () => {
     <Container>     
         <CategoriesComponent />
         <Box>
-          <Grid sx={{ flexGrow: 1 }}>
+        {loading ? <div>Loading Products..</div> : <Grid sx={{ flexGrow: 1 }}>
             <AllProducts allProducts={products} />
           </Grid>
+          }
         </Box>     
     </Container>
   );
