@@ -69,11 +69,11 @@ const CategoriesComponent = () => {
       </Grid>
       <br />
    
-      {
+      {/* {
       ProductsByCategory.map((product) => {
               return <Productitem product={product}  />;
             })
-      }
+      } */}
       
     </div>      
       </Container>

@@ -15,7 +15,7 @@ const AllNature = () => {
 
   useEffect(() => getProducts(), []);
 
-  console.log("in Home",data)
+  
 
   return (
     <Container>     
