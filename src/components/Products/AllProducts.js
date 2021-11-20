@@ -4,7 +4,7 @@ import Products from "./Products";
 
 const AllProducts = (props) => {
   const { allProducts, classes } = props;
-  console.log("in all products", allProducts);
+  console.log("in all products ::", allProducts);
   return (
     
     <Grid container> 
